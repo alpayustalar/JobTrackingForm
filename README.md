@@ -1,5 +1,5 @@
 # JobTrackingForm <br>
-Technologies: C#, DevExpress, Visual Studio, Microsoft SQL Server Management Studio <br>
+<b>Technologies:</b> C#, DevExpress, Visual Studio, Microsoft SQL Server Management Studio <br>
 I used Data Grid (Devex Data Grid) in the application. All data entries can be entered and changed in the Data Grid. <br>
 - Data Grid columns are as follows: <br>
 Clicking the + button will create an editable row. <br>
