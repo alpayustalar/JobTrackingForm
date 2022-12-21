@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BimserModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="Ticket Numarası" />
+          </Key>
+          <Property Name="Ticket Numarası" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Müşteri" Type="varchar" MaxLength="50" />
+          <Property Name="Konu" Type="varchar" MaxLength="50" />
+          <Property Name="Açıklama" Type="varchar(max)" />
+          <Property Name="Üst Açıklama" Type="varchar" MaxLength="50" />
+          <Property Name="Sorumlu" Type="varchar" MaxLength="50" />
+          <Property Name="Planlama Tarihi" Type="datetime" />
+          <Property Name="Tamamlama Tarihi" Type="datetime" />
+          <Property Name="Durum" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="BimserModelStoreContainer">
+          <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BimserModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="Ticket_Numarası" />
+          </Key>
+          <Property Name="Ticket_Numarası" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Müşteri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Konu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Açıklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Üst_Açıklama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sorumlu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Planlama_Tarihi" Type="DateTime" Precision="3" />
+          <Property Name="Tamamlama_Tarihi" Type="DateTime" Precision="3" />
+          <Property Name="Durum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="BimserEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Jobs" EntityType="Self.Job" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BimserModelStoreContainer" CdmEntityContainer="BimserEntities">
+          <EntitySetMapping Name="Jobs">
+            <EntityTypeMapping TypeName="BimserModel.Job">
+              <MappingFragment StoreEntitySet="Job">
+                <ScalarProperty Name="Ticket_Numarası" ColumnName="Ticket Numarası" />
+                <ScalarProperty Name="Müşteri" ColumnName="Müşteri" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+                <ScalarProperty Name="Açıklama" ColumnName="Açıklama" />
+                <ScalarProperty Name="Üst_Açıklama" ColumnName="Üst Açıklama" />
+                <ScalarProperty Name="Sorumlu" ColumnName="Sorumlu" />
+                <ScalarProperty Name="Planlama_Tarihi" ColumnName="Planlama Tarihi" />
+                <ScalarProperty Name="Tamamlama_Tarihi" ColumnName="Tamamlama Tarihi" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
